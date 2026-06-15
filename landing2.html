@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Landing Page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    line-height:1.6;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:#0f172a;
+    color:white;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+}
+
+.nav-links li{
+    margin-left:20px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.menu-btn{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+.hero{
+    height:100vh;
+    background:linear-gradient(
+        rgba(0,0,0,.6),
+        rgba(0,0,0,.6)
+    ),
+    url('https://unsplash.com/photos/train-on-bridge-surrounded-with-trees-at-daytime-XVoyX7l9ocY');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:55px;
+}
+
+.hero-content p{
+    margin:20px 0;
+    font-size:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.features{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.features h2{
+    margin-bottom:40px;
+    font-size:40px;
+}
+
+.feature-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.feature-box{
+    background:#f4f4f4;
+    padding:30px;
+    border-radius:10px;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.feature-box:hover{
+    transform:translateY(-10px);
+}
+
+.feature-box h3{
+    margin-bottom:15px;
+}
+
+
+.about{
+    padding:100px 10%;
+    background:#e2e8f0;
+    text-align:center;
+}
+
+.about h2{
+    margin-bottom:20px;
+    font-size:40px;
+}
+
+.about p{
+    max-width:800px;
+    margin:autofill;
+}
+
+.cta{
+    text-align:center;
+    padding:100px 20px;
+    background:#2563eb;
+    color:white;
+}
+
+.cta h2{
+    margin-bottom:20px;
+    font-size:40px;
+}
+
+.cta-btn{
+    margin-top:20px;
+    padding:15px 30px;
+    border:none;
+    border-radius:5px;
+    background:white;
+    color:#2563eb;
+    font-size:18px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+footer p{
+    margin-top:10px;
+}
+
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:-100%;
+        width:100%;
+        flex-direction:column;
+        background:#0f172a;
+        text-align:center;
+        transition:.4s;
+    }
+
+    .nav-links.active{
+        left:0;
+    }
+
+    .nav-links li{
+        margin:20px 0;
+    }
+
+    .hero-content h1{
+        font-size:38px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">LandingPage</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="menu-btn" id="menuBtn">☰</div>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Make your trip easy with us.</h1>
+        <p>
+            Join us and explore the world .
+        </p>
+
+        <a href="#features" class="btn">Get Started</a>
+    </div>
+</section>
+
+<section class="features" id="features">
+
+    <h2>Our Features</h2>
+
+    <div class="feature-container">
+
+        <div class="feature-box">
+            <h3>🎒 Easy Trip Planning . </h3>
+            <p>Plan your entire journey effortlessly with personalized travel recommendations and itineraries..</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>🏨 Hotel Booking </h3>
+            <p>Enables users to book accommodations online.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3> 🗾Interactive Maps </h3>
+            <p>Shows locations, routes, and nearby attractions.</p>
+        </div>
+
+</section>
+
+<section class="about" id="about">
+
+    <h2>About Us</h2>
+
+    <p>
+           We help travelers discover amazing destinations and create unforgettable experiences. From planning to booking,
+           our goal is to make every journey simple, enjoyable, and memorable. Explore the world with
+             confidence and let your next adventure begin with us.
+ </p>
+
+</section>
+
+<section class="cta">
+
+    <h2>Ready To Start Your Journey?</h2>
+
+    <p>Join thousands of happy customers today.</p>
+
+    <button class="cta-btn" id="ctaBtn">
+        Start Now
+    </button>
+
+</section>
+
+<footer id="contact">
+
+    <h3>Contact Us</h3>
+
+    <p>Email: yourtravel@gmail.com</p>
+
+    <p>Phone: +91 9876543210</p>
+
+    <p>© 2026 Landing Page. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+// Mobile Menu
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// Close menu after click
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
+
+// CTA Button
+document.getElementById("ctaBtn").addEventListener("click", () => {
+    alert("Thank you for your interest!");
+});
+</script>
+
+</body>
+</html>
